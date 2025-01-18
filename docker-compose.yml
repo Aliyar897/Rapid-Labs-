@@ -1,0 +1,75 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: myuser  # Match this with the Django settings
+      POSTGRES_PASSWORD: mypassword  # Match this with the Django settings
+      POSTGRES_DB: mydatabase  # Match this with the Django settings
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "myuser", "-d", "mydatabase"]  # Health check for database readiness
+      interval: 10s  # Check every 10 seconds
+      retries: 5  # Retry up to 5 times before considering the container unhealthy
+      start_period: 30s  # Allow the database 30 seconds to initialize before checking
+
+  web:
+    build: .
+    command: >
+      bash -c "
+        python manage.py migrate && 
+        python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      db:
+        condition: service_healthy  # Ensure the db service is healthy before starting the web service
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  pg_data: 
+
+
+# version: '3.8'
+# services:
+#   db:
+#     image: postgres:13
+#     environment:
+#       POSTGRES_USER: myuser  # Match this with the Django settings
+#       POSTGRES_PASSWORD: mypassword  # Match this with the Django settings
+#       POSTGRES_DB: mydatabase  # Match this with the Django settings
+#     volumes:
+#       - pg_data:/var/lib/postgresql/data
+#     networks:
+#       - backend
+#     healthcheck:
+#       test: ["CMD", "pg_isready", "-U", "myuser", "-d", "mydatabase"]  # Health check for database readiness
+#       interval: 10s  # Check every 10 seconds
+#       retries: 5  # Retry up to 5 times before considering the container unhealthy
+#       start_period: 30s  # Allow the database 30 seconds to initialize before checking
+
+#   web:
+#     build: .
+#     command: python manage.py runserver 0.0.0.0:8000
+#     depends_on:
+#       db:
+#         condition: service_healthy  # Ensure the db service is healthy before starting the web service
+#     ports:
+#       - "8000:8000"
+#     networks:
+#       - backend
+
+# networks:
+#   backend:
+#     driver: bridge
+
+# volumes:
+#   pg_data:
