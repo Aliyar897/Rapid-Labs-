@@ -28,7 +28,3 @@ docker-compose.override.yml
 
 # Ignore specific environment
 E:/Rapid Laps Tasks/myenv/
-
-# Ignore migrations
-*/migrations/*
-!*/migrations/__init__.py
