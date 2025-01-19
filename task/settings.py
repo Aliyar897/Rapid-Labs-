@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'user'
+    'user',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -69,16 +70,6 @@ WSGI_APPLICATION = 'task.wsgi.application'
 import os
 from urllib.parse import urlparse
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'task_database',  # This should match the DB name in your Docker Compose file
-#         'USER': 'user',            # This should match the PostgreSQL user in your Docker Compose file
-#         'PASSWORD': '12345',       # This should match the PostgreSQL password in your Docker Compose file
-#         'HOST': 'db',              # This should match the service name for PostgreSQL in Docker Compose
-#         'PORT': '5432',            # Default port for PostgreSQL
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -90,6 +81,12 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',  # Use the SQLite backend
+#         'NAME': BASE_DIR / 'db.sqlite3',          # Store the database file in the project directory
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

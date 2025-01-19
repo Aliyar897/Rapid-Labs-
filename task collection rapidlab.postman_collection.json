@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "4b08f313-891f-4b58-9b59-ef3c9d33e271",
+		"name": "task collection rapidlab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40875314"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"manager_username\",\r\n  \"password\": \"manager_password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.100.11:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"100",
+						"11"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjE4OTk1LCJpYXQiOjE3MzcyMTg2OTUsImp0aSI6ImY5OGE0NDI0Y2NiMDQzY2RiM2M1ZWQ5ZjlmOTJlY2U1IiwidXNlcl9pZCI6Miwicm9sZSI6ImFkbWluIn0.EEHDMpke2x1IRwXZ90D5cew9giFMOLJBt73NSLBaQts",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.100.11:8000/api/admin/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"100",
+						"11"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjE5MDcwLCJpYXQiOjE3MzcyMTg3NzAsImp0aSI6ImIzYTRkNTQwNDBmNDQ5NWU5NmVhMjYzNjJkZWM2MzNmIiwidXNlcl9pZCI6Mywicm9sZSI6Im1hbmFnZXIifQ.XTLK7c5yhhbF8d6nAwth_ECcLNddHuUkGeoDYd6OD1U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.100.11:8000/api/manager/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"100",
+						"11"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"manager",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjE5MTM5LCJpYXQiOjE3MzcyMTg4MzksImp0aSI6IjM1MWQ2MzY4ZmI0YTQxYzg5NzQ0ZWQyMTFlMGI5ZDAyIiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.jYGCs8BBGh0t0kVjGrXP8TtIDCglCi0NKSE7aFtU1g4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.100.11:8000/api/user/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"100",
+						"11"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNzMwMzI4NSwiaWF0IjoxNzM3MjE2ODg1LCJqdGkiOiIyNzBiYzViYTE2OGI0ZTVlODBmNGFhY2Y2MjRiMmM3MCIsInVzZXJfaWQiOjEsInJvbGUiOiJ1c2VyIn0.DOrg080wwrRiJmpCELIXfA5hKp-mFyu-WUbjvrMwXLc\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.100.11:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"100",
+						"11"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
