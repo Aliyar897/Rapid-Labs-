@@ -47,8 +47,20 @@ You can use the provided API endpoints to perform actions and validate the funct
 --> task collection rapidlab.postman_collection.json
 ""
 
+### 6. Test Cases
+
+```bash
+docker-compose exec web python manage.py test.py
+```
+
 ---
 
+### Documentation links
+
+    - http://192.168.100.11:8000/docs/
+    - http://192.168.100.11:8000/redoc/
+
+---
 ### Additional Information
 
 - The project uses Docker for containerization, which ensures that all dependencies and services are correctly isolated.
